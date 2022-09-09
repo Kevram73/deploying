@@ -27,7 +27,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Initiate the ftp setup
         run: |
-          git config git-ftp "ftp://ftp.easycarrental.tg"
+          git config git-ftp.url "ftp://ftp.easycarrental.tg"
           git config git-ftp.user "deploying@easycarrental.tg"
           git config git-ftp.password "Alkashi13!!!%"
           git ftp init
