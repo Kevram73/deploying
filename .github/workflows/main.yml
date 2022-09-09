@@ -25,17 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: ==== Starting workflows ====
-        run: echo Start process
-
-      # Runs a set of commands using the runners shell
-      - name: ==== Testing ====
-        run: |
-          cd ~/
-          touch init.py && mkdir network
-      - uses: "finnp/create-file-action@master"
-        env:
-          FILE_NAME: "codes/index.py"
-          FILE_DATA: "file content"
+        run: echo 'Start process'
           
       - name: ==== End of process ====
         run: echo "Process end"
