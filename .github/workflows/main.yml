@@ -27,7 +27,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Initiate the ftp setup
         run: |
-          git ftp init -u deploying@easycarrental.tg -p Alkashi13!!!% ftp://ftp.easycarrental.tg
+          git ftp init -u deploying@easycarrental.tg -p Alkashi13!!!% ftp://ftp.easycarrental.tg/deploying
           
       - name: Catchup
         run: |
