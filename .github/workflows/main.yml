@@ -27,6 +27,6 @@ jobs:
       - name: ==== Starting workflows ====
         run: |
           echo 'Start process'
-          scp
+          scp index.html easyhtjs@185.22.109.185:/home/easyhtjs/public_html/deploying
       - name: ==== End of process ====
         run: echo "Process end"
