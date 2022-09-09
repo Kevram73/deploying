@@ -30,9 +30,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: ==== Testing ====
         run: |
-          echo "COPY FILES"
-          touch init.py
-          mkdir network
-          cp init.py network/
+          cd ~/
+          echo COPY FILES && touch init.py && mkdir network
+          
       - name: ==== End of process ====
         run: echo "Process end"
