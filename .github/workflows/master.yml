@@ -2,10 +2,10 @@ name: Project deploy on cpanel
 on:
   push:
     branches: 
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   web-deploy:
     name: 🌻 Deploy
