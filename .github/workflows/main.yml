@@ -31,7 +31,11 @@ jobs:
       - name: ==== Testing ====
         run: |
           cd ~/
-          echo COPY FILES && touch init.py && mkdir network
+          touch init.py && mkdir network
+      - uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: "codes/index.py"
+          FILE_DATA: "file content"
           
       - name: ==== End of process ====
         run: echo "Process end"
