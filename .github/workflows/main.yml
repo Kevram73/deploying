@@ -1,35 +1,19 @@
-name: Create a continuous integration for this project
-
-# Controls when the workflow will run
+name: Project deploy on cpanel
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    branches: 
+      - main
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  web-deploy:
+    name: 🌻 Deploy
     runs-on: ubuntu-latest
-    
     steps:
-      - uses: actions/checkout@v3
+    - name: ☀️Get latest code
+      uses: actions/checkout@v2.1.0
 
-      - name: Begin the workflow
-        run: echo I am Kevin Ativon and I am the boss
-
-      # Runs a set of commands using the runners shell
-      - name: Initiate the ftp setup
-        run: |
-          git ftp init -u deploying@easycarrental.tg -p Alkashi13!!!% ftp://ftp.easycarrental.tg/deploying
-          
-      - name: Catchup
-        run: |
-          git ftp catchup
-          git ftp push
+    - name: 🩸 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
